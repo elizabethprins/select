@@ -1,6 +1,6 @@
 # Select
 
-[Demo](https://.netlify.app)
+[Demo](https://select-dropdown.netlify.app/)
 
 A proof of concept for a dropdown component that could be used by someone to easily find and select the relevant option for them. The component:
 
