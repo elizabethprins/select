@@ -1,0 +1,40 @@
+// Colors
+
+$white: #FFFFFF;
+$yellow: #FFE200;
+$black: #150C3C;
+$green: #3EE9B6;
+$blue: #008dff;
+$light: #EDF3FF;
+$grey: #7a8bac;
+
+
+// Gradient
+
+$g1: $black;
+$g2: #2D2153;
+$g3: #45366C;
+$g4: #5E4D86;
+$g5: #7765A0;
+$g6: #927EBB;
+
+
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito+Sans&display=swap');
+
+$sans: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+$montserrat: 'Montserrat', $sans;
+
+
+// Breakpoints
+
+$tiny: 480px;
+$small: 768px;
+$medium: 1024px;
+
+
+// Miscellaneous
+
+$maxWidth: 40em;
+$radius: .25em;

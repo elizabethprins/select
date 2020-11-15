@@ -1,0 +1,156 @@
+button {
+    @include aa;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 1em 2em;
+    border: 0;
+    border-radius: $radius;
+    box-shadow: 0 .5em .625em rgba($black, .25);
+    font-family: $montserrat;
+    color: $black;
+    background: $yellow;
+    outline-color: $black;
+    cursor: pointer;
+    transition: all .2s;
+
+    @include hover {
+        box-shadow: 0 .75em .875em .375em rgba($black, .25);
+        transform: translateY(-.25em);
+    }
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 1em 2em;
+    border: 0;
+    border-radius: $radius;
+    box-shadow: 0 .5em .625em rgba($black, .25);
+    font-family: $montserrat;
+    font-size: inherit;
+    caret-color: $grey;
+    color: $black;
+    background: $light;
+    cursor: pointer;
+    transition: all .2s;
+
+    &::placeholder {
+        opacity: 1;
+        color: inherit;
+        transition: all .2s;
+    }
+
+    &:focus {
+        background: $white;
+
+        &::placeholder {
+            font-family: $sans;
+            color: $grey;
+        }
+
+        + svg path {
+            fill: $grey;
+        }
+    }
+
+    @include hover {
+        box-shadow: 0 .75em .875em .375em rgba($black, .25);
+        transform: translateY(-.25em);
+
+        + svg {
+            transform: translateY(-.25em);
+        }
+    }
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        width: 100%;
+    }
+
+    button {
+        margin: 1.5em 0 0 auto;
+    }
+
+    @include breakpoint($tiny) {
+        flex-direction: row;
+
+        input {
+            width: auto;
+        }
+
+        button {
+            margin: 0 0 0 1em;
+        }
+    }
+}
+
+.input-wrapper {
+    position: relative;
+
+    svg {
+        width: .9375em;
+        height: auto;
+        position: absolute;
+        top: 1.3125em;
+        right: 1.5em;
+        transition: all .2s;
+    }
+
+    ul {
+        width: 100%;
+        max-height: 13.75em;
+        padding: 1em 1.75em;
+        display: block;
+        position: absolute;
+        top: calc(100% + 1em);
+        left: 0;
+        border-radius: $radius;
+        box-shadow: 0 .75em .875em .375em rgba($black, .25);
+        background: $light;
+        overflow: auto;
+    }
+
+    li {
+        width: fit-content;
+        width: -moz-fit-content;
+        padding: .5em .25em;
+        position: relative;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to bottom
+                                        , rgba($green, 0) 0%
+                                        , rgba($green, 0) calc(55% - 0.1875em)
+                                        , $green calc(55% - 0.1875em)
+                                        , $green calc(55% + 0.1875em)
+                                        , rgba($green, 0) calc(55% + 0.1875em)
+                                        , rgba($green, 0) 100%
+                                        );
+            z-index: -1;
+            transition: opacity .2s;
+        }
+
+        @include hover {
+            font-family: $montserrat;
+            outline: none;
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}
