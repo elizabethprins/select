@@ -159,7 +159,7 @@ view model =
     , body =
         [ main_ [ class "main" ]
             [ header []
-                [ h1 [] [ text <| model.title ] ]
+                [ h1 [] [ text model.title ] ]
             , article []
                 [ viewSelect model ]
             ]
@@ -235,7 +235,7 @@ viewOption tabindex_ lastIndex index option_ =
                         "input"
 
                     else
-                        String.fromInt <| (index + i)
+                        String.fromInt (index + i)
 
                 focus =
                     FocusOn << next
