@@ -3,7 +3,7 @@ button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    padding: 1em 2em;
+    padding: 1em 1.75em;
     border: 0;
     border-radius: $radius;
     box-shadow: 0 .5em .625em rgba($black, .25);
@@ -17,6 +17,10 @@ button {
     @include hover {
         box-shadow: 0 .75em .875em .375em rgba($black, .25);
         transform: translateY(-.25em);
+    }
+
+    @include breakpoint($tiny) {
+        padding: 1em 2em;
     }
 }
 
@@ -67,26 +71,9 @@ input {
 
 .dropdown {
     display: flex;
-    flex-direction: column;
-
-    input {
-        width: 100%;
-    }
 
     button {
-        margin: 1.5em 0 0 auto;
-    }
-
-    @include breakpoint($tiny) {
-        flex-direction: row;
-
-        input {
-            width: auto;
-        }
-
-        button {
-            margin: 0 0 0 1em;
-        }
+        margin-left: 1em;
     }
 }
 
